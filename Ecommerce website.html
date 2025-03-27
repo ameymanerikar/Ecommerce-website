@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YAY! It's BOGO</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      color: #ff4081;
+      font-weight: bold;
+    }
+    .option {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      position: relative;
+      cursor: pointer;
+    }
+    .option.selected {
+      border: 2px solid #ff4081;
+      background-color: #fff0f5;
+    }
+    .option input[type="radio"] {
+  position: absolute;
+  left: 10px;
+  top: 25px;
+  cursor: pointer;
+}
+    .option .header {
+      margin-left: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .option .price {
+      font-weight: bold;
+      text-align: right;
+    }
+    .discount-badge {
+      background: #ff4081;
+      color: white;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.75em;
+      margin-left: 6px;
+    }
+    .most-popular {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #ff4081;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75em;
+    }
+    .strikethrough {
+      text-decoration: line-through;
+      color: #888;
+      font-size: 0.8em;
+    }
+    .size-colour-select {
+      display: none;
+      margin-top: 10px;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .select-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    select {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 100px;
+    }
+    .delivery {
+      color: #fb89b0;
+      font-size: 0.9em;
+      font-weight: bold;
+    }
+    .total {
+      font-weight: bold;
+      margin-top: 5px;
+      text-align: right;
+    }
+    button {
+      width: 100%;
+      background: #ff4081;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 15px;
+    }
+    .powered {
+      text-align: right;
+      margin-top: 8px;
+      font-size: 0.7em;
+      color: #888;
+    }
+	.summary-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>YAY! It's BOGO</h2>
+
+    <div class="option" onclick="selectOption(1)">
+      <input type="radio" name="bundle" id="bundle1">
+      <div class="header">
+        <div>
+          <strong>1 Unit</strong> <span class="discount-badge">10% Off</span><br>
+          <small>Standard Price</small>
+        </div>
+        <div class="price">
+          $10.00 USD<br>
+          <span class="strikethrough">$24.00 USD</span>
+        </div>
+      </div>
+      <div class="size-colour-select" id="selectors1">
+        <div class="select-row">
+          #1 Size:
+          <select><option>S</option><option>M</option><option>L</option></select>
+          Colour:
+          <select><option>Black</option><option>White</option><option>Colour</option></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" onclick="selectOption(2)">
+      <input type="radio" name="bundle" id="bundle2">
+      <div class="most-popular">MOST POPULAR</div>
+      <div class="header">
+        <div>
+          <strong>2 Unit</strong> <span class="discount-badge">20% Off</span>
+        </div>
+        <div class="price">
+          $18.00 USD<br>
+          <span class="strikethrough">$24.00 USD</span>
+        </div>
+      </div>
+      <div class="size-colour-select" id="selectors2">
+        <div class="select-row">
+          #1 Size:
+          <select><option>S</option><option>M</option><option>L</option></select>
+          Colour:
+          <select><option>Black</option><option>White</option><option>Colour</option></select>
+        </div>
+        <div class="select-row">
+          #2 Size:
+          <select><option>S</option><option>M</option><option>L</option></select>
+          Colour:
+          <select><option>Black</option><option>White</option><option>Colour</option></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" onclick="selectOption(3)">
+      <input type="radio" name="bundle" id="bundle3">
+      <div class="header">
+        <div>
+          <strong>3 Unit</strong> <span class="discount-badge">30% Off</span>
+        </div>
+        <div class="price">
+          $24.00 USD<br>
+          <span class="strikethrough">$24.00 USD</span>
+        </div>
+      </div>
+      <div class="size-colour-select" id="selectors3">
+        <div class="select-row">
+          #1 Size:
+          <select><option>S</option><option>M</option><option>L</option></select>
+          Colour:
+          <select><option>Black</option><option>White</option><option>Colour</option></select>
+        </div>
+        <div class="select-row">
+          #2 Size:
+          <select><option>S</option><option>M</option><option>L</option></select>
+          Colour:
+          <select><option>Black</option><option>White</option><option>Colour</option></select>
+        </div>
+        <div class="select-row">
+          #3 Size:
+          <select><option>S</option><option>M</option><option>L</option></select>
+          Colour:
+          <select><option>Black</option><option>White</option><option>Colour</option></select>
+        </div>
+      </div>
+    </div>
+<div class="summary-line">
+    <div class="delivery">Free Delivery</div>
+    <div class="total" id="total">Total: $0.00 USD</div>
+	</div>
+    <button>+ Add to Cart</button>
+    <div class="powered">@ Powered by Pumper</div>
+  </div>
+
+  <script>
+    function selectOption(option) {
+      document.querySelectorAll('.option').forEach((el) => el.classList.remove('selected'));
+      document.querySelector(`#bundle${option}`).checked = true;
+      document.querySelector(`#bundle${option}`).parentElement.classList.add('selected');
+
+      // Hide all dropdowns
+      for (let i = 1; i <= 3; i++) {
+        document.getElementById(`selectors${i}`).style.display = 'none';
+      }
+
+      // Show selected option’s dropdowns
+      document.getElementById(`selectors${option}`).style.display = 'flex';
+
+      // Update total price
+      let price = 0;
+      if (option === 1) price = 10;
+      if (option === 2) price = 18;
+      if (option === 3) price = 24;
+      document.getElementById('total').innerText = `Total: $${price.toFixed(2)} USD`;
+    }
+  </script>
+</body>
+</html>
